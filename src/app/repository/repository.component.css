@@ -1,0 +1,55 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.container
+{
+    margin-top: -10%;
+}
+.btn
+{
+    margin-left: -60%;
+    margin-top: -10%;
+}
+
+h3
+{
+    margin-top: -90px;
+}
+.repo-table{
+    margin-left: 30%;
+}
+.name
+{
+    width: 250px;
+}
+:host::ng-deep.p-dropdown{
+
+    width: 250px;
+    
+}
+
+:host ::ng-deep .p-dialog  {
+    width: 330px;
+    display: block;
+}
+#create
+{
+    margin-left: 90%;
+    margin-top: 100%;
+
+
+    
+}
+.repo
+{
+    
+    margin-top: 4%;
+}
+

@@ -1,0 +1,115 @@
+{
+  "Repository": [
+    {
+      "reponame": "Repository1",
+      "description": "Anemoi Software Technologies Pvt.Ltd Kharadi,Pune",
+      "manager": "Siddhesh Kadus",
+      "department": "IT",
+      "id": 1
+    },
+    {
+      "reponame": "Repository2",
+      "description": "Anemoi Software Technologies Pvt.Ltd Kharadi,Pune",
+      "manager": "Siddhesh Kadus",
+      "department": "HR",
+      "id": 2
+    },
+    {
+      "reponame": "Repository3",
+      "description": "Anemoi Software ",
+      "manager": "Siddhesh Kadus",
+      "department": "IT",
+      "id": 3
+    }
+  ],
+  "directories": [
+    {
+      "type": "OneDrive",
+      "Credfile": "",
+      "foldername": "shubham",
+      "appname": "",
+      "clientid": "",
+      "username": "",
+      "password": "",
+      "repoId": "",
+      "id": 1
+    },
+    {
+      "type": "OneDrive",
+      "Credfile": "",
+      "foldername": "narya",
+      "appname": "",
+      "clientid": "",
+      "username": "",
+      "password": "",
+      "repoId": "",
+      "id": 2
+    },
+    {
+      "type": "OneDrive",
+      "Credfile": "",
+      "foldername": "",
+      "appname": "",
+      "clientid": "",
+      "username": "",
+      "password": "",
+      "repoId": "",
+      "id": 3
+    },
+    {
+      "type": "GoogleDrive",
+      "Credfile": "",
+      "foldername": "",
+      "appname": "",
+      "clientid": "",
+      "username": "",
+      "password": "",
+      "repoId": "",
+      "id": 4
+    },
+    {
+      "type": "GoogleDrive",
+      "Credfile": "",
+      "foldername": "rutik",
+      "appname": "",
+      "clientid": "",
+      "username": "",
+      "password": "",
+      "repoId": "",
+      "id": 5
+    },
+    {
+      "type": "GoogleDrive",
+      "Credfile": "",
+      "foldername": "laxman",
+      "appname": "",
+      "clientid": "",
+      "username": "",
+      "password": "",
+      "repoId": "",
+      "id": 6
+    },
+    {
+      "type": "OneDrive",
+      "Credfile": "",
+      "foldername": "shubham",
+      "appname": "",
+      "clientid": "",
+      "username": "",
+      "password": "",
+      "repoId": null,
+      "id": 7
+    },
+    {
+      "type": "OneDrive",
+      "Credfile": "",
+      "foldername": "narya",
+      "appname": "",
+      "clientid": "",
+      "username": "",
+      "password": "",
+      "repoId": null,
+      "id": 8
+    }
+  ]
+}

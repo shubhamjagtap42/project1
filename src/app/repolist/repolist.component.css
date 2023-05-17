@@ -1,0 +1,90 @@
+
+.container
+{
+
+}
+
+:host::ng-deep.p-table{
+
+    margin-right: 50%;
+ }
+.repotable
+{
+    text-align: center;
+    margin-left: 8%;
+    margin-top: -19%;
+    position: absolute;
+    border: solid 1px;
+    width: 1150px;
+    height: 600px;
+}
+.buttons
+{
+    margin-top: 10%;
+    margin-right: 40%;
+    /* position: relative; */
+    /* display: flex; */
+    /* display: inline-flex; */
+    /* padding-right: 20%; */
+   
+}
+.buttons1
+{
+    margin-right: -40%;
+
+}
+#btn1
+{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+#btn2
+{
+    margin-left: 90%;
+    margin-top: -50%;
+    height: 10%;
+    width: 250px;
+}
+.btn{
+
+    margin-left: 10%;
+    margin-top: -10%;
+    border: solid 1px;
+    width: 155px;
+    height: 700px;
+}
+:host::ng-deep.p-button{
+    font-size: larger;
+    font-style: italic;
+    margin: 10px;
+}
+.btn1
+{
+    margin-left: 10%;
+    margin-top: -10%;
+    border: solid 1px;
+    height: 700px;
+    width: 100px;
+}
+
+.move
+{
+    margin-left: 75%;
+    margin-bottom: 20%;
+    margin-top: -20%;
+    margin-top: -6%;
+}
+
+.field
+{
+    width: 400px;
+}
+#field2
+{
+    width: 300px;
+}
+:host::ng-deep.p-dialog{
+    margin-bottom: 20%;
+}
+
+

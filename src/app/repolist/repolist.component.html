@@ -1,0 +1,279 @@
+<!-- <h3 style="text-align: center;">hello</h3> -->
+
+<div class="container">
+  <!-- <div class="repo" style="margin-top: -100px">
+      <p-table
+      *ngIf="isvisible"
+      [value]="repodata"
+      [tableStyle]="{
+        width: '90px',
+        'margin-left': '100px',
+        border: 'solid 1px',
+        'margin-bottom': '70px'
+      }"
+      >
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="color: blueviolet">Repository</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-data>
+        <tr>
+          <td>
+              <span style="cursor: pointer"
+                ><b (click)="showtable(data)">{{ data.reponame }}</b></span
+                >
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div> -->
+
+  <div class="move">
+    <p-button
+      label="Add"
+      styleClass="p-button-outlined p-button-warning"
+    ></p-button>
+
+    <p-button
+      label="Create"
+      styleClass="p-button-outlined p-button-help"
+      (onClick)="showdialogue()"
+    ></p-button>
+  </div>
+
+  <div class="repotable">
+    <p-table
+      [value]="products"
+      [resizableColumns]="true"
+      [responsive]="true"
+      [scrollable]="false"
+      [rowHover]="true"
+      [tableStyle]="{ width: '1145px' }"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Sr No</th>
+          <th>FolderType</th>
+          <th>FolderName</th>
+          <th>DirName</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>{{ product.id }}</td>
+          <td>{{ product.type }}</td>
+          <td>{{ product.foldername }}</td>
+          <td>{{ product }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+    <form [formGroup]="formdata">
+      <p-dialog
+        [(visible)]="productDialog"
+        [style]="{ width: '650px' }"
+        header="Directive"
+        [modal]="true"
+        styleClass="p-fluid"
+      >
+        <ng-template pTemplate="content">
+          <h3>Add New Item</h3>
+
+          <div class="grid">
+            <div class="grid col-12">
+              <div class="col-12">
+                <p-dropdown
+                  [options]="cities"
+                  [(ngModel)]="selectedCity1"
+                  placeholder="Select a Drive"
+                  formControlName="type"
+                  optionLabel="name"
+                  optionValue="name"
+                  [showClear]="true"
+                ></p-dropdown>
+              </div>
+              <div class="col-6">
+                <input
+                  pInputText
+                  type="text"
+                  placeholder="Enter  FolderName"
+                  formControlName="foldername"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  pInputText
+                  type="text"
+                  placeholder="Enter  AppName"
+                  formControlName="appname"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  pInputText
+                  type="text"
+                  placeholder="Enter  ClientId"
+                  formControlName="clientid"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  pInputText
+                  type="text"
+                  placeholder="Enter  UserName"
+                  formControlName="username"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  pInputText
+                  type="text"
+                  placeholder="Enter  PassWord"
+                  formControlName="password"
+                />
+              </div>
+
+              <div class="col-12">
+                <button
+                  pButton
+                  pRipple
+                  label="Cancel"
+                  (click)="oncancel()"
+                  icon="pi pi-times"
+                  class="p-button-text"
+                ></button>
+
+                <button
+                  pButton
+                  pRipple
+                  type="submit"
+                  label="Save"
+                  (click)="onsave()"
+                  icon="pi pi-check"
+                  class="p-button-text"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="field">
+            <label for="name"><b>Type</b> </label>
+            <br />
+            <p-dropdown
+              [options]="cities"
+              [(ngModel)]="selectedCity1"
+              placeholder="Select a Drive"
+              formControlName="type"
+              optionLabel="name"
+              optionValue="name"
+              [showClear]="true"
+            ></p-dropdown>
+          </div>
+          <br />
+          <div class="field">
+            <label for="name"><b>CredFile Path</b> </label>
+            <br />
+            <input
+              type="text"
+              class="name"
+              formControlName="Credfile"
+              pInputText
+              id="name"
+              required
+              autofocus
+            />
+          </div>
+          <br />
+          <div class="field">
+            <label for="name"><b>Folder Name</b></label>
+            <br />
+            <input
+              type="text"
+              class="name"
+              formControlName="foldername"
+              pInputText
+              id="manage"
+              required
+              autofocus
+            />
+          </div>
+
+          <br />
+          <div class="field">
+            <label for="name"><b>App Name</b></label>
+            <br />
+            <input
+              type="text"
+              class="name"
+              formControlName="appname"
+              pInputText
+              id="manage"
+              required
+              autofocus
+            />
+          </div>
+
+          <div class="field col">
+            <label for="price"><b>Client ID</b> </label>
+            <p-inputNumber
+              id="clientid"
+              formControlName="clientid"
+            ></p-inputNumber>
+          </div>
+          <br />
+
+          <div class="field">
+            <label for="name"><b>UserName</b></label>
+            <br />
+            <input
+              type="text"
+              class="name"
+              formControlName="username"
+              pInputText
+              id="user"
+              required
+              autofocus
+            />
+          </div>
+          <br />
+
+          <div class="field">
+            <label for="name"><b>Password</b></label>
+            <br />
+            <input
+              type="password"
+              class="name"
+              formControlName="password"
+              pInputText
+              id="pass"
+              required
+              autofocus
+            />
+          </div>
+          <br />
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+          <button
+            pButton
+            pRipple
+            label="Cancel"
+            (click)="oncancel()"
+            icon="pi pi-times"
+            class="p-button-text"
+          ></button>
+          <button
+            pButton
+            pRipple
+            type="submit"
+            label="Save"
+            (click)="onsave()"
+            icon="pi pi-check"
+            class="p-button-text"
+          ></button> -->
+        </ng-template>
+      </p-dialog>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,307 @@
+<div class="container">
+    <div class="main" style="text-align: center">
+      <nav class="navbar">
+        <b><i>pwc</i></b>
+        <div class="sidenav"></div>
+      </nav>
+  
+      <div class="img">
+        <p-image
+          styleClass="myimage"
+          src="https://cdn-icons-png.flaticon.com/512/10098/10098717.png"
+          width="35"
+
+        ></p-image>
+       
+  
+        
+      </div>
+
+      <div>
+        <button pButton (click)="hello()">hello</button>
+      </div>
+
+
+
+      <form>
+
+        <p-dialog [(visible)]="productDialog1" [style]="{width: '450px'}" header="Repo" [modal]="true" styleClass="p-fluid">
+          <ng-template pTemplate="content">
+            <div class="field">
+              <label for="name"> <b>RepoName</b> </label>
+              <br />
+              <input
+              type="text"
+              class="name"
+              pInputText
+              id="name"
+              required
+              autofocus
+              />
+            </div>
+            <br />
+            
+            <div class="field">
+              <label for="description"> <b>Description</b> </label>
+              <br />
+              <textarea
+                id="description"
+                pInputTextarea
+                required
+                rows="4"
+                cols="31"
+                ></textarea>
+              </div>
+            <br />
+            <div class="field">
+              <label for="name"> <b>Manager</b></label>
+              <br />
+              <input
+              type="text"
+              class="name"
+              pInputText
+              id="manage"
+              required
+              autofocus
+              />
+              <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
+            </div>
+            
+            <br />
+            <div class="field">
+              <label for="department"> <b>Department</b></label>
+              <br />
+              <p-dropdown
+              inputId="department"
+              placeholder="Select"
+              >
+                
+            </p-dropdown>
+          </div>
+          
+          
+          
+        </ng-template>
+        
+        <ng-template pTemplate="footer">
+          <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" ></button>
+          <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="save()"  ></button>
+        </ng-template>
+      </p-dialog>
+      </form>
+
+
+
+
+      <div class="repo" style="margin-top: -100px;">
+
+        <p-table
+        *ngIf="isvisible"
+        [value]="products"
+        [tableStyle]="{
+          'width': '90px',
+          'margin-left': '100px',
+          'border': 'solid 1px',
+          'margin-bottom':'70px'
+        }"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Repositories</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <td>
+            {{ product.RepoName }}
+          </td>
+        </ng-template>
+      </p-table>
+      </div>
+
+
+
+    
+
+
+      <div class="repotable" *ngIf="visible">
+        <p-table [value]="products" [tableStyle]="{ width: '500px' }">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>FolderType</th>
+              <th>Folder</th>
+              <th></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+            <tr>
+              <td>{{ product.foldertype }}</td>
+              <td>{{ product.folder }}</td>
+              <td>{{ product.id }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+  
+        <div class="buttons">
+          <hr />
+          <button
+            id="btn1"
+            pButton
+            pRipple
+            type="button"
+            (click)="showdialogue()"
+            label="Add OneDrive Folder"
+            class="p-button-outlined p-button-secondary"
+          ></button>
+  
+          <button
+            id="btn2"
+            pButton
+            pRipple
+            type="button"
+            label="Add GoogleDrive Folder"
+            (click)="showdialogue1()"
+            class="p-button-outlined p-button-secondary"
+          ></button>
+        </div>
+      </div>
+      
+
+      <form [formGroup]="formdata">
+        <p-dialog
+          [(visible)]="productDialog"
+          [style]="{ width: '450px' }"
+          header="Directive"
+          [modal]="true"
+          styleClass="p-fluid"
+        >
+          <ng-template pTemplate="content">
+            <div class="field">
+              <label for="name"><b>Type</b> </label>
+              <br />
+              <input
+                type="text"
+                class="name"
+                formControlName="type"
+                pInputText
+                id="name"
+                required
+                autofocus
+              />
+            </div>
+            <br />
+            <div class="field">
+              <label for="name"><b>CredFile Path</b> </label>
+              <br />
+              <input
+                type="text"
+                class="name"
+                formControlName="Credfile"
+                pInputText
+                id="name"
+                required
+                autofocus
+              />
+            </div>
+            <br />
+            <div class="field">
+              <label for="name"><b>Folder Path</b></label>
+              <br />
+              <input
+                type="text"
+                class="name"
+                formControlName="folderpath"
+                pInputText
+                id="manage"
+                required
+                autofocus
+              />
+            </div>
+  
+            <br />
+            <div class="field">
+              <label for="name"><b>App Name</b></label>
+              <br />
+              <input
+                type="text"
+                class="name"
+                formControlName="appname"
+                pInputText
+                id="manage"
+                required
+                autofocus
+              />
+            </div>
+  
+            <div class="field col">
+              <label for="price"><b>Client ID</b> </label>
+              <p-inputNumber
+                id="clientid"
+                formControlName="clientid"
+              ></p-inputNumber>
+            </div>
+            <br />
+  
+            <div class="field">
+              <label for="name"><b>UserName</b></label>
+              <br />
+              <input
+                type="text"
+                class="name"
+                formControlName="username"
+                pInputText
+                id="user"
+                required
+                autofocus
+              />
+            </div>
+            <br />
+  
+            <div class="field">
+              <label for="name"><b>Password</b></label>
+              <br />
+              <input
+                type="password"
+                class="name"
+                formControlName="password"
+                pInputText
+                id="pass"
+                required
+                autofocus
+              />
+            </div>
+            <br />
+          </ng-template>
+  
+          <ng-template pTemplate="footer">
+            <button
+              pButton
+              pRipple
+              label="Cancel"
+              (click)="oncancel()"
+              icon="pi pi-times"
+              class="p-button-text"
+            ></button>
+            <button
+              pButton
+              pRipple
+              type="submit"
+              label="Save"
+              (click)="onsave()"
+              icon="pi pi-check"
+              class="p-button-text"
+            ></button>
+          </ng-template>
+        </p-dialog>
+      </form>
+  
+
+
+
+
+
+
+      
+    </div>
+</div>
+
+  
